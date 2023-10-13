@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ByCapitalPageComponent } from './pages/by-capital-page/by-capital-page.component';
 import { ByCountryOPageComponent } from './pages/by-country-page/by-country-page.component';
 import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
+import { CountryPageComponent } from './pages/country-page/country-page.component';
+import { CountriesRoutingModule } from './countries-routing.module';
+import { sharedModule } from '../shared/shared.module';
+import { CountryTableComponent } from './components/countryTable/countryTable.component';
 
 
 
@@ -10,10 +14,14 @@ import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.com
   declarations: [
     ByCapitalPageComponent,
     ByCountryOPageComponent,
-    ByRegionPageComponent
+    ByRegionPageComponent,
+    CountryPageComponent,
+    CountryTableComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CountriesRoutingModule,
+    sharedModule
   ]
 })
 export class CountriesModule { }

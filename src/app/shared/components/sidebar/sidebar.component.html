@@ -3,16 +3,24 @@
 <ul class="list-group">
   <li
     routerLinkActive="active"
-    routerLink="home"
-    [routerLinkActiveOptions]="{ exact: true }"
+    routerLink="countries/by-capital"
     class="list-group-item"
   >
-    Home page
+    By Capital
   </li>
-  <li routerLinkActive="active" routerLink="about" class="list-group-item">
-    About page
+  <li
+    routerLinkActive="active"
+    routerLink="countries/by-country"
+    class="list-group-item"
+  >
+    By Country
   </li>
-  <li routerLinkActive="active" routerLink="contact" class="list-group-item">
-    Contact Page
+
+  <li
+    routerLinkActive="active"
+    routerLink="countries/by-region"
+    class="list-group-item"
+  >
+    By Region
   </li>
 </ul>

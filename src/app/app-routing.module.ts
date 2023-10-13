@@ -6,10 +6,13 @@ import { ContactPageComponent } from './shared/pages/contactPage/contactPage.com
 
 
 const routes: Routes = [
-	{ path: 'home', component: HomePageComponent },
-	{ path: 'about', component: AboutPageComponent },
-	{ path: 'contact', component: ContactPageComponent },
-	{ path: '**', redirectTo: 'home' }
+
+	{
+		path: 'countries',
+		loadChildren: () => import('./countries/countries.module')
+			.then(m => m.CountriesModule)
+	},
+	{ path: '**', redirectTo: 'countries' }
 ]
 @NgModule({
 	imports: [
