@@ -10,10 +10,10 @@ import { Country } from '../../interfaces/country';
 export class ByCapitalPageComponent {
   public countries: Country[] = [];
   constructor(private countriesService: CountriesService) { }
-  searchByCapital(term: string) {
+  searchByCapital(term: string): void {
     this.countriesService.searchCapital(term)
       .subscribe(countries => {
         this.countries = countries
-      })
+      });
   }
 }

@@ -1,1 +1,15 @@
-<p>by-country-opage works!</p>
+<h2>Por país</h2>
+<div class="row">
+  <div class="col">
+    <app-search-box
+      (onValue)="searchByName($event)"
+      placeholder="Buscar por país"
+    ></app-search-box>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <hr />
+    <app-countryTable [countries]="countries"></app-countryTable>
+  </div>
+</div>
