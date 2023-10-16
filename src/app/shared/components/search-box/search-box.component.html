@@ -3,5 +3,5 @@
   type="text"
   [placeholder]="placeholder"
   #txtSearchInput
-  (keyup.enter)="emitValue(txtSearchInput.value)"
+  (keyup)="onKeyPress(txtSearchInput.value)"
 />
