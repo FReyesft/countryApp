@@ -13,8 +13,11 @@ export class CountriesService {
 		byCountries: { term: '', countries: [] },
 	}
 	constructor(private http: HttpClient) {
-
 	}
+
+
+
+
 
 	searchCountryByAlphaCode(code: string): Observable<Country | null> {
 		const url = `${this.url}/alpha/${code}`
@@ -40,6 +43,7 @@ export class CountriesService {
 					term: term,
 					countries: countries,
 				})
+
 			)
 	}
 
@@ -51,6 +55,7 @@ export class CountriesService {
 					term: term,
 					countries: countries
 				})
+
 			)
 	}
 
@@ -59,9 +64,10 @@ export class CountriesService {
 		return this.getCountriesRequest(url)
 			.pipe(
 				tap(countries => this.cacheStore.byRegion = {
-					region,
-					countries
+					region: region,
+					countries: countries
 				})
+
 			)
 	}
 }
