@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/country';
 import { CountriesService } from '../../services/countries.service';
 @Component({
@@ -6,11 +6,15 @@ import { CountriesService } from '../../services/countries.service';
   templateUrl: './by-country-page.component.html',
   styleUrls: ['./by-country-page.component.css']
 })
-export class ByCountryOPageComponent {
+export class ByCountryOPageComponent implements OnInit {
 
   public countries: Country[] = [];
-
+  public initialValue = ''
   constructor(private countriesService: CountriesService) { }
+  ngOnInit(): void {
+    this.countries = this.countriesService.cacheStore.byCountries.countries
+    this.initialValue = this.countriesService.cacheStore.byCountries.term
+  }
 
   searchByName(term: string) {
     this.countriesService.searchCountry(term).subscribe(

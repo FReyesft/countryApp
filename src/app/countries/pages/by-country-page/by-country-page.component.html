@@ -3,6 +3,7 @@
   <div class="col">
     <app-search-box
       (onDebounce)="searchByName($event)"
+      [initialValue]="initialValue"
       placeholder="Buscar por país"
     ></app-search-box>
   </div>
